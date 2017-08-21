@@ -15,8 +15,8 @@
 
 <div class="container">
     <div class="row">
-        <?php if (isset($_POST['input'][0])): ?>
-            <?php echo validation($_POST['input'][0]) ?>
+        <?php if (isset($_POST['input']) && !empty($_POST['input'])): ?>
+            <?= validation($_POST['input'][0]) ?>
         <?php endif; ?>
     </div>
     <form <?= $_SERVER['SCRIPT_NAME'] ?> method="post" enctype="multipart/form-data">
