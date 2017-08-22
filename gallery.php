@@ -17,15 +17,9 @@
         <div class="carousel-inner" role="listbox">
             <?php if (isset($images)): ?>
                 <?php foreach ($images as $key => $image): ?>
-                    <?php if (isset($images[$key]['active'])): ?>
-                        <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="<?= $images[$key]['path'] ?>" alt="">
-                        </div>
-                    <?php elseif ($images[$key]['path']): ?>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="<?= $images[$key]['path'] ?>" alt="">
-                        </div>
-                    <?php endif; ?>
+                    <div class="<?= isset($images[$key]['active']) ? 'carousel-item active' : 'carousel-item ' ?>">
+                        <img class="d-block img-fluid" src="<?= $images[$key]['path'] ?>" alt="">
+                    </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>

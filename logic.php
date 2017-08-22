@@ -79,9 +79,8 @@ function createTxt($string, $fileName)
 {
 
     foreach ($fileName as $key => $name) {
-        if ($fileName[$key] == '') {
+        if (!empty($fileName[$key])) {
 
-        } else {
             $file = fopen('1.txt', 'a+');
             $line = json_encode(['email' => $string, 'path' => $name]) . PHP_EOL;
             fputs($file, $line);
